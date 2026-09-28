@@ -60,7 +60,9 @@ Exit codes:
 
 ## Required fields
 
-`id`, `issue`, `affected_url`, `evidence`, `impact`, `priority`, `recommendation`, `implementation_status`, `verification`
+`id`, `issue`, `affected_url`, `evidence`, `impact`, `priority`, `recommendation`, `implementation_status`.
+
+`verification` is conditionally required when `implementation_status` is `READY_FOR_VERIFICATION` or `VERIFIED`.
 
 Optional fields include `category`, `owner`, `due_date`, `implementation_notes`, `verification_date`, and `source`.
 
