@@ -90,4 +90,4 @@ For a broader SEO reporting workflow, see the [MarketLatch SEO Report Template](
 
 ## License
 
-MIT.
+This repository is licensed under the MIT License. See [LICENSE](LICENSE).
