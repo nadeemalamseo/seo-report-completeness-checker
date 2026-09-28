@@ -15,7 +15,10 @@ def test_invalid_values():
     assert "INVALID_PRIORITY" in codes and "INVALID_IMPLEMENTATION_STATUS" in codes
 def test_verified_requires_verification():
     row=base(); row["implementation_status"]="VERIFIED"
-    assert "VERIFIED_WITHOUT_EVIDENCE" in validate_findings([row])[0].issues
+    assert "MISSING_VERIFICATION" in validate_findings([row])[0].issues
+def test_ready_for_verification_requires_verification():
+    row=base(); row["implementation_status"]="READY_FOR_VERIFICATION"
+    assert "MISSING_VERIFICATION" in validate_findings([row])[0].issues
 def test_duplicate():
     row=base(); findings=validate_findings([row,dict(row)])
     assert "DUPLICATE_FINDING" in findings[1].issues and "DUPLICATE_FINDING_ID" in findings[1].issues
