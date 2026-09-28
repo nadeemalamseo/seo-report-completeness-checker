@@ -15,7 +15,7 @@
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:11px 17px;border-radius:9px;text-decoration:none;font-weight:700}
     .primary{background:var(--green);color:#07251a}.secondary{border:1px solid #6da9c8;color:#fff}
     main{padding:46px 24px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}.card{background:var(--card);border:1px solid #dce5ed;border-radius:14px;padding:24px;box-shadow:0 5px 18px rgba(15,39,71,.05)}
-    h2{font-size:1.8rem;margin-top:0;color:var(--navy)} h3{margin-top:0;color:var(--navy)} code{background:#edf3f7;padding:2px 6px;border-radius:5px}
+    h2{font-size:1.8rem;margin-top:0;color:var(--navy)} h3{margin-top:0;color:var(--navy)} code{background:#edf3f7;padding:2px 6px;border-radius:5px} pre code{background:transparent;color:#e7f5ff;padding:0;border-radius:0;font:inherit}
     pre{background:#0b1f3a;color:#e7f5ff;padding:20px;border-radius:10px;overflow:auto}.note{border-left:4px solid var(--green);padding:12px 18px;background:#edf9f4}
     footer{border-top:1px solid #dce5ed;padding:28px 24px;color:var(--muted)} footer a{color:var(--navy);font-weight:600}
   </style>
@@ -38,10 +38,7 @@
     <div class="card"><h3>Action tracking</h3><p>Flags invalid dates and overdue findings while preserving deterministic, offline behavior.</p></div>
     <div class="card"><h3>Quality heuristics</h3><p>Identifies generic evidence or recommendations using simple deterministic rules.</p></div>
   </div></section>
-  <section style="margin-top:46px"><h2>Quick start</h2><div class="card"><pre><code>python -m pip install -e .
-seo-report-check examples/complete-report.csv
-seo-report-check examples/incomplete-report.csv --json
-seo-report-check examples/incomplete-report.csv --strict --today 2026-09-29</code></pre></div></section>
+  <section style="margin-top:46px"><h2>Quick start</h2><div class="card"><p><strong>1. Install the tool</strong></p><pre><code>python -m pip install -e .</code></pre><p><strong>2. Check a complete report</strong></p><pre><code>seo-report-check examples/complete-report.csv</code></pre><p><strong>3. Get JSON output</strong></p><pre><code>seo-report-check examples/incomplete-report.csv --json</code></pre><p><strong>4. Use strict mode with a fixed date</strong></p><pre><code>seo-report-check examples/incomplete-report.csv --strict --today 2026-09-29</code></pre><p>Run these commands from the repository directory. See the <a href="https://github.com/nadeemalamseo/seo-report-completeness-checker/blob/main/README.md">README</a> for the complete CLI reference.</p></div></section>
   <section style="margin-top:46px"><h2>Clear setup guide</h2><div class="grid">
     <div class="card"><h3>1. Get the tool</h3><p>Download the <a href="https://github.com/nadeemalamseo/seo-report-completeness-checker/archive/refs/tags/v0.1.0.zip">v0.1.0 ZIP</a> or clone the repository.</p></div>
     <div class="card"><h3>2. Install</h3><p>Use Python 3.10 or newer, then run <code>python -m pip install -e .</code>.</p></div>
