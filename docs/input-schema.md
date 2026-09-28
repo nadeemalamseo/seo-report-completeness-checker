@@ -1,8 +1,10 @@
 # Input schema
 
-Required fields: `id`, `issue`, `affected_url`, `evidence`, `impact`, `priority`, `recommendation`, `implementation_status`, `verification`.
+Required fields: `id`, `issue`, `affected_url`, `evidence`, `impact`, `priority`, `recommendation`, `implementation_status`.
 
-Optional fields: `category`, `owner`, `due_date`, `implementation_notes`, `verification_date`, `source`.
+Optional fields: `verification`, `category`, `owner`, `due_date`, `implementation_notes`, `verification_date`, `source`.
+
+Verification is required when `implementation_status` is `READY_FOR_VERIFICATION` or `VERIFIED`.
 
 Impact values: LOW, MEDIUM, HIGH, CRITICAL.
 
