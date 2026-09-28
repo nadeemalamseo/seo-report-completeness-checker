@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEO Report Completeness Checker | MarketLatch</title>
+  <meta name="description" content="Validate SEO audit reports for complete evidence, actionable recommendations, implementation status, and verification fields.">
+  <link rel="canonical" href="https://nadeemalamseo.github.io/seo-report-completeness-checker/">
+  <style>
+    :root{--navy:#0f2747;--green:#18c37e;--cyan:#4fd8ff;--ink:#17324f;--muted:#5f7184;--bg:#f5f8fb;--card:#fff}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+    .hero{background:linear-gradient(135deg,#0b1f3a,#0f2747 60%,#073d59);color:#fff;padding:72px 24px}
+    .wrap{max-width:1050px;margin:auto}.eyebrow{color:var(--cyan);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.82rem}
+    h1{font-size:clamp(2.2rem,5vw,4.3rem);line-height:1.05;margin:12px 0 20px;max-width:850px}.hero p{font-size:1.15rem;max-width:760px;color:#dbe8f4}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:11px 17px;border-radius:9px;text-decoration:none;font-weight:700}
+    .primary{background:var(--green);color:#07251a}.secondary{border:1px solid #6da9c8;color:#fff}
+    main{padding:46px 24px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}.card{background:var(--card);border:1px solid #dce5ed;border-radius:14px;padding:24px;box-shadow:0 5px 18px rgba(15,39,71,.05)}
+    h2{font-size:1.8rem;margin-top:0;color:var(--navy)} h3{margin-top:0;color:var(--navy)} code{background:#edf3f7;padding:2px 6px;border-radius:5px}
+    pre{background:#0b1f3a;color:#e7f5ff;padding:20px;border-radius:10px;overflow:auto}.note{border-left:4px solid var(--green);padding:12px 18px;background:#edf9f4}
+    footer{border-top:1px solid #dce5ed;padding:28px 24px;color:var(--muted)} footer a{color:var(--navy);font-weight:600}
+  </style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">MarketLatch · Open Source SEO Utility</div>
+  <h1>SEO Report Completeness Checker</h1>
+  <p>Validate SEO audit reports for complete evidence, actionable recommendations, implementation status, and verification fields.</p>
+  <div class="actions">
+    <a class="btn primary" href="https://github.com/nadeemalamseo/seo-report-completeness-checker">View repository</a>
+    <a class="btn secondary" href="https://marketlatch.com/seo-report-template/">SEO report template</a>
+  </div>
+</div></header>
+<main><div class="wrap">
+  <section><h2>What it checks</h2><div class="grid">
+    <div class="card"><h3>Required fields</h3><p>Detects missing issue, URL, evidence, impact, priority, recommendation, and implementation status.</p></div>
+    <div class="card"><h3>Consistency</h3><p>Checks duplicate IDs/findings, supported values, verification lifecycle rules, and status conflicts.</p></div>
+    <div class="card"><h3>Action tracking</h3><p>Flags invalid dates and overdue findings while preserving deterministic, offline behavior.</p></div>
+    <div class="card"><h3>Quality heuristics</h3><p>Identifies generic evidence or recommendations using simple deterministic rules.</p></div>
+  </div></section>
+  <section style="margin-top:46px"><h2>Quick start</h2><div class="card"><pre><code>python -m pip install -e .
+seo-report-check examples/complete-report.csv
+seo-report-check examples/incomplete-report.csv --json
+seo-report-check examples/incomplete-report.csv --strict --today 2026-09-29</code></pre></div></section>
+  <section style="margin-top:46px"><h2>Supported input</h2><div class="grid">
+    <div class="card"><h3>CSV</h3><p>Pass a CSV report directly to the CLI. UTF-8 and UTF-8 with BOM are supported.</p></div>
+    <div class="card"><h3>JSON</h3><p>Pass a JSON list of finding objects, or an object containing a <code>findings</code> or <code>rows</code> list.</p></div>
+  </div></section>
+  <section style="margin-top:46px"><h2>Verification lifecycle</h2><p class="note"><code>verification</code> becomes required when <code>implementation_status</code> is <code>READY_FOR_VERIFICATION</code> or <code>VERIFIED</code>. It is optional for <code>OPEN</code>, <code>IN_PROGRESS</code>, <code>BLOCKED</code>, and <code>WONT_FIX</code>.</p></section>
+  <section style="margin-top:46px"><h2>Scope and limitations</h2><div class="card"><p>This tool validates report completeness and internal consistency. It does not crawl websites, call search-engine APIs, verify live HTTP responses, assess whether an SEO recommendation is strategically correct, predict rankings or traffic, or guarantee indexing or search visibility.</p><p>Evidence and recommendation quality checks are deterministic heuristics, not expert or AI judgments.</p></div></section>
+</div></main>
+<footer><div class="wrap">Built by MarketLatch · <a href="https://github.com/nadeemalamseo/seo-report-completeness-checker">GitHub repository</a> · <a href="https://marketlatch.com/seo-report-template/">MarketLatch SEO Report Template</a></div></footer>
+</body>
+</html>
