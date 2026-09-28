@@ -27,6 +27,7 @@
   <p>Validate SEO audit reports for complete evidence, actionable recommendations, implementation status, and verification fields.</p>
   <div class="actions">
     <a class="btn primary" href="https://github.com/nadeemalamseo/seo-report-completeness-checker">View repository</a>
+    <a class="btn secondary" href="https://github.com/nadeemalamseo/seo-report-completeness-checker/archive/refs/tags/v0.1.0.zip">Download v0.1.0 ZIP</a>
     <a class="btn secondary" href="https://marketlatch.com/seo-report-template/">SEO report template</a>
   </div>
 </div></header>
@@ -41,6 +42,13 @@
 seo-report-check examples/complete-report.csv
 seo-report-check examples/incomplete-report.csv --json
 seo-report-check examples/incomplete-report.csv --strict --today 2026-09-29</code></pre></div></section>
+  <section style="margin-top:46px"><h2>Clear setup guide</h2><div class="grid">
+    <div class="card"><h3>1. Get the tool</h3><p>Download the <a href="https://github.com/nadeemalamseo/seo-report-completeness-checker/archive/refs/tags/v0.1.0.zip">v0.1.0 ZIP</a> or clone the repository.</p></div>
+    <div class="card"><h3>2. Install</h3><p>Use Python 3.10 or newer, then run <code>python -m pip install -e .</code>.</p></div>
+    <div class="card"><h3>3. Prepare your report</h3><p>Provide an existing CSV or JSON SEO audit report using the documented fields.</p></div>
+    <div class="card"><h3>4. Run the checker</h3><p>Run <code>seo-report-check your-report.csv</code>. Use <code>--json</code> for machine-readable output and <code>--strict</code> to promote warnings.</p></div>
+  </div></section>
+  <section style="margin-top:46px"><h2>Download & source</h2><div class="card"><p><strong>Latest release:</strong> <a href="https://github.com/nadeemalamseo/seo-report-completeness-checker/releases/tag/v0.1.0">v0.1.0</a></p><p><a href="https://github.com/nadeemalamseo/seo-report-completeness-checker/archive/refs/tags/v0.1.0.zip">Download the complete v0.1.0 source ZIP</a> · <a href="https://github.com/nadeemalamseo/seo-report-completeness-checker">Browse source on GitHub</a></p><p>The runtime is local/offline and has no external API dependency.</p></div></section>
   <section style="margin-top:46px"><h2>Supported input</h2><div class="grid">
     <div class="card"><h3>CSV</h3><p>Pass a CSV report directly to the CLI. UTF-8 and UTF-8 with BOM are supported.</p></div>
     <div class="card"><h3>JSON</h3><p>Pass a JSON list of finding objects, or an object containing a <code>findings</code> or <code>rows</code> list.</p></div>
