@@ -82,6 +82,12 @@ Weak evidence/recommendation checks are deterministic heuristics, not expert or 
 
 For a broader SEO reporting workflow, see the [MarketLatch SEO Report Template](https://marketlatch.com/seo-report-template/?utm_source=github&utm_medium=referral&utm_campaign=github_seo_report_completeness_checker).
 
+## Project links
+
+- [Project landing page](https://nadeemalamseo.github.io/seo-report-completeness-checker/)
+- [v0.1.0 release](https://github.com/nadeemalamseo/seo-report-completeness-checker/releases/tag/v0.1.0)
+- [Download v0.1.0 ZIP](https://github.com/nadeemalamseo/seo-report-completeness-checker/archive/refs/tags/v0.1.0.zip)
+
 ## License
 
 MIT.
