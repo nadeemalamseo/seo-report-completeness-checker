@@ -1,0 +1,3 @@
+id,issue,affected_url,evidence,impact,priority,recommendation,implementation_status,verification,due_date
+F-001,Missing title,https://example.com/page,,HIGH,HIGH,Improve SEO,OPEN,,2026-09-01
+F-002,,https://example.com/other,"Issue evidence",MEDIUM,URGENT,"Fix this issue",DONE,,2026-08-01
