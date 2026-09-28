@@ -2,7 +2,7 @@ from datetime import date
 from .models import Finding
 from .normalize import clean, is_weak_text, looks_like_url, normalize_key
 
-REQUIRED = ("issue","affected_url","evidence","impact","priority","recommendation","implementation_status","verification")
+REQUIRED = ("issue","affected_url","evidence","impact","priority","recommendation","implementation_status")
 IMPACTS = {"LOW","MEDIUM","HIGH","CRITICAL"}
 PRIORITIES = {"LOW","MEDIUM","HIGH","CRITICAL","1","2","3","4"}
 STATUSES = {"OPEN","IN_PROGRESS","BLOCKED","READY_FOR_VERIFICATION","VERIFIED","WONT_FIX"}
@@ -33,8 +33,13 @@ def validate_findings(rows, today=None, strict=False):
         if priority and priority not in PRIORITIES: f.issues.append("INVALID_PRIORITY")
         status = data.get("implementation_status","").upper()
         if status and status not in STATUSES: f.issues.append("INVALID_IMPLEMENTATION_STATUS")
-        if status == "VERIFIED" and not data.get("verification"): f.issues.append("VERIFIED_WITHOUT_EVIDENCE")
-        if status == "OPEN" and data.get("verification_date"): f.warnings.append("STATUS_VERIFICATION_CONFLICT")
+        verification = data.get("verification")
+        if status in {"READY_FOR_VERIFICATION","VERIFIED"} and not verification:
+            f.issues.append("MISSING_VERIFICATION")
+        if status == "VERIFIED" and verification:
+            pass
+        if status == "OPEN" and data.get("verification_date"):
+            f.warnings.append("STATUS_VERIFICATION_CONFLICT")
         due = data.get("due_date")
         if due:
             try:
