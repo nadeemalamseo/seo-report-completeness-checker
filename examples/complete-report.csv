@@ -1,0 +1,3 @@
+id,issue,affected_url,evidence,impact,priority,recommendation,implementation_status,verification,due_date
+F-001,Missing title,https://example.com/page,"Title element is absent",HIGH,HIGH,"Add a unique title",OPEN,,2026-12-01
+F-002,Duplicate meta description,https://example.com/other,"Meta description matches another page",MEDIUM,MEDIUM,"Write a unique description",VERIFIED,"Verified after recrawl",2026-09-01
