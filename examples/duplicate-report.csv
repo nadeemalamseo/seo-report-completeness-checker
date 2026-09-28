@@ -1,0 +1,3 @@
+id,issue,affected_url,evidence,impact,priority,recommendation,implementation_status,verification
+F-001,Missing title,https://example.com/page,"Title absent",HIGH,HIGH,"Add title",OPEN,
+F-001,Missing title,https://example.com/page,"Title absent",HIGH,HIGH,"Add title",OPEN,
