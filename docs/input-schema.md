@@ -1,13 +1,34 @@
 # Input schema
 
-Required fields: `id`, `issue`, `affected_url`, `evidence`, `impact`, `priority`, `recommendation`, `implementation_status`.
+## Required fields
 
-Optional fields: `verification`, `category`, `owner`, `due_date`, `implementation_notes`, `verification_date`, `source`.
+Every finding must contain:
 
-Verification is required when `implementation_status` is `READY_FOR_VERIFICATION` or `VERIFIED`.
+- id
+- issue
+- affected_url
+- evidence
+- impact
+- priority
+- recommendation
+- implementation_status
 
-Impact values: LOW, MEDIUM, HIGH, CRITICAL.
+## Conditional and optional fields
 
-Priority values: LOW, MEDIUM, HIGH, CRITICAL, or 1-4.
+- verification is required when status is READY_FOR_VERIFICATION or VERIFIED.
+- verification_date is required when status is VERIFIED; it must be an ISO-8601 calendar date and cannot be in the future relative to the reference date.
+- Optional fields: category, owner, due_date, implementation_notes, verification_date, source.
 
-Implementation statuses: OPEN, IN_PROGRESS, BLOCKED, READY_FOR_VERIFICATION, VERIFIED, WONT_FIX.
+## Accepted values
+
+- Impact: LOW, MEDIUM, HIGH, CRITICAL.
+- Priority: LOW, MEDIUM, HIGH, CRITICAL, or 1–4. Numeric ordering is defined by the team using the report.
+- Implementation status: OPEN, IN_PROGRESS, BLOCKED, READY_FOR_VERIFICATION, VERIFIED, WONT_FIX.
+
+## CSV
+
+Use one finding per row, a single header row, unique non-empty column names, and the required field names. Headers are trimmed and case-insensitive. Blank optional cells are allowed.
+
+## JSON
+
+Use a top-level array of finding objects, or an object with a findings or rows array. Each field value must be a scalar (string, number, boolean, or null). Duplicate object keys and empty arrays are rejected.
