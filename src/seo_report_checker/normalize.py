@@ -4,7 +4,7 @@ from urllib.parse import urlsplit
 
 
 def clean(value: object) -> str:
-    return re.sub(r"\s+", " ", str(value or "")).strip()
+    return re.sub(r"\s+", " ", ("" if value is None else str(value))).strip()
 
 
 def normalize_key(value: object) -> str:
