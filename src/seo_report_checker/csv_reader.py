@@ -1,7 +1,5 @@
 import csv
 
-from .validators import REQUIRED
-
 
 def read_csv(path):
     with open(path, newline="", encoding="utf-8-sig") as fh:
@@ -14,6 +12,7 @@ def read_csv(path):
             raise ValueError("CSV contains an empty column name.")
         if len(normalized) != len(set(normalized)):
             raise ValueError("CSV contains duplicate column headers.")
+        reader.fieldnames = normalized
         rows = []
         for line_number, row in enumerate(reader, start=2):
             if None in row:
